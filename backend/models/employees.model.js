@@ -20,7 +20,7 @@ const employeeSchema = new Schema(
           type: String,
           trim:true
         },
-        zipcde: {
+        zipcode: {
             type: String,
             trim:true
           },

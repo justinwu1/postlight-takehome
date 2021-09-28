@@ -25,6 +25,11 @@ connection.once('open', () => {
   console.log('MongoDB database connection established succssfully')
 })
 
+const employeesRouter = require('./routes/employees')
+
+app.use('/', employeesRouter)
+app.get('/', (req, res) => res.send('API running'))
+
 const PORT = process.env.PORT || 5000 // if there is a port in .env, if not default 5000
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
