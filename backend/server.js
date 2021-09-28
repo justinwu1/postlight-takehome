@@ -1,7 +1,9 @@
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
-const faker = require('faker')
+const seedDatabase = require('./utils/seedDatabase')
+const Employee = require('./models/employees.model')
+
 require('dotenv').config()
 
 const app = express()
@@ -23,6 +25,13 @@ const connection = mongoose.connection
 
 connection.once('open', () => {
   console.log('MongoDB database connection established succssfully')
+
+  // If the employee collection is empty, we seed 20 random data for the collection.
+  Employee.count((err,count)=>{
+      if(!err && count === 0){
+        seedDatabase()
+      }
+  })
 })
 
 const employeesRouter = require('./routes/employees')
