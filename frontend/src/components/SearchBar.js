@@ -2,8 +2,12 @@ import React from 'react'
 
 export default function SearchBar() {
     return (
-        <div>
-            Search Bar!!
+    <>
+        <h1 className="mt-5 form-label text-center">Search Employees by name</h1>
+        <div className="d-flex justify-content-center">
+            <input style={{width:"70%"}}type="text" id="inputPassword5" className="form-control"/>
+            <button style={{verticalAlign:'top'}}type="button" class="btn btn-primary">Search </button>
         </div>
+    </>
     )
 }
