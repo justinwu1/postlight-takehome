@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
-
+const faker = require('faker')
 require('dotenv').config()
 
 const app = express()
@@ -13,6 +13,7 @@ app.use(cors())
 app.use(express.json({ extended: false }))
 const uri = process.env.ATLAS_URI
 
+// Connect to the database and output if connected successfully.
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
