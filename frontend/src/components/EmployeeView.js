@@ -19,7 +19,7 @@ export default function EmployeeView() {
     const renderEmployees = ()=>{
         return employeeData.map((ele)=>{
             return (
-                <Card deleteEmployee={deleteEmployee} data = { ele }/>
+                <Card key={ele._id}deleteEmployee={deleteEmployee} data = { ele }/>
             )
         })
     }

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
 export default function Card(props) {
     const {_id,lastName,firstName,zipcode,streetAddress,country,state,city,portfolioImg,jobTitle,jobType,department } = props.data;
     return (
@@ -18,8 +17,8 @@ export default function Card(props) {
                     <li className="list-group-item"><b>Country:</b> {`${country}`}</li>
                 </ul>
                 <div className="card-body d-flex justify-content-center">
-                <Link to="/employee/:id" className="card-link"><button type="button" class="btn btn-success">Edit</button></Link>
-                <button onClick={()=>{props.deleteEmployee(_id)}} type="button" class="card-link btn btn-danger">Delete</button>
+                <Link to="/employee/:id" className="card-link"><button type="button" className="btn btn-success">Edit</button></Link>
+                <button onClick={()=>{props.deleteEmployee(_id)}} type="button" className="card-link btn btn-danger">Delete</button>
                 </div>
             </div>
         </div>
