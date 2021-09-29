@@ -43,4 +43,5 @@ This is a web application for postlight take-home challenge, mainly use faker.js
 ## Usage: 
 Perform a npm install for both backend and frontend folder once cloned
 > npm install
+> Also need an .env file for the database credential, supply if asked
 
