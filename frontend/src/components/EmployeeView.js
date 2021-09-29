@@ -11,7 +11,7 @@ export default function EmployeeView() {
             const { data } = await axios.get("http://localhost:5000/employees")
             setEmployeeData(data)
         }
-        fetchData();
+        fetchData()
         // If rerender, reset it back to false for next deletion
         setDeltedEmployee(false)
     },[deletedEmployee])
