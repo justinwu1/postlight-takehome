@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 export default function Card(props) {
-    const { lastName,firstName,zipcode,streetAddress,country,state,city,portfolioImg,jobTitle,jobType,department } = props.data;
-    console.log(props.data)
+    const {_id,lastName,firstName,zipcode,streetAddress,country,state,city,portfolioImg,jobTitle,jobType,department } = props.data;
     return (
         <div className="col">
             <div className="card">
@@ -15,11 +15,11 @@ export default function Card(props) {
                     <li className="list-group-item"><b>Department:</b> {`${department}`}</li>
                     <li className="list-group-item"><b>Job type:</b> {`${jobType}`}</li>
                     <li className="list-group-item"><b>Address:</b> {`${streetAddress},${city},${state},${zipcode}`}</li>
-                    <li className="list-group-item"><b>Born:</b> {`${country}`}</li>
+                    <li className="list-group-item"><b>Country:</b> {`${country}`}</li>
                 </ul>
-                <div className="card-body">
-                    <Link to="#" className="card-link">Card link</Link>
-                    <Link to="#" className="card-link">Another link</Link>
+                <div className="card-body d-flex justify-content-center">
+                <Link to="/employee/:id" className="card-link"><button type="button" class="btn btn-success">Edit</button></Link>
+                <button onClick={()=>{props.deleteEmployee(_id)}} type="button" class="card-link btn btn-danger">Delete</button>
                 </div>
             </div>
         </div>
