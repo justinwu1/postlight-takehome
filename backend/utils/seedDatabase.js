@@ -10,7 +10,7 @@ const seedDatabase = async ()=>{
         const city = faker.address.city();
         const state = faker.address.state();
         const country = faker.address.country();
-        const portfolioImg = faker.image.people();
+        const portfolioImg = faker.image.avatar();
         const department = faker.commerce.department();
         const jobType = faker.name.jobType();
         const jobTitle = faker.name.jobTitle();
