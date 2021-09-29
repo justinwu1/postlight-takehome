@@ -35,7 +35,7 @@ router.post('/employees', (req, res) => {
     })
   })
 
-  // Return single employee data
+  // Return single employee data through data
 router.get('/employee/:id', (req, res) => {
     Employee.findOne({ _id: req.params.id }).exec((err, employee) => {
       if (err) {
