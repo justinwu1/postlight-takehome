@@ -17,7 +17,7 @@ export default function Card(props) {
                     <li className="list-group-item"><b>Country:</b> {`${country}`}</li>
                 </ul>
                 <div className="card-body d-flex justify-content-center">
-                <Link to="/employee/:id" className="card-link"><button type="button" className="btn btn-success">Edit</button></Link>
+                <Link to={`/employee/${_id}`} className="card-link"><button type="button" className="btn btn-success">Edit</button></Link>
                 <button onClick={()=>{props.deleteEmployee(_id)}} type="button" className="card-link btn btn-danger">Delete</button>
                 </div>
             </div>
