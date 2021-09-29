@@ -11,7 +11,8 @@ const seedDatabase = async ()=>{
         const state = faker.address.state();
         const country = faker.address.country();
         const portfolioImg = faker.image.people();
-        const data = { lastName, firstName, streetAddress,zipcode,city,state,country,portfolioImg }
+        const department = faker.commerce.department();
+        const data = { lastName, firstName, streetAddress,zipcode,city,state,country,portfolioImg,department }
         const employee = new Employee(data)
         await employee.save();
     }
