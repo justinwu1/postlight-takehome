@@ -23,8 +23,9 @@ router.post('/employees', (req, res) => {
     const country = req.body.country;
     const portfolioImg = req.body.portfolioImg;
     const department = req.body.department
-
-    const data = { lastName, firstName, streetAddress,zipcode,city,state,country,portfolioImg,department }
+    const jobType = faker.name.jobType();
+    const jobTitle = faker.name.jobTitle();
+    const data = { lastName, firstName, streetAddress,zipcode,city,state,country,portfolioImg,department,jobType,jobTitle }
     const employee = new Employee(data)
     employee.save((err, result) => {
       if (err) {
@@ -66,7 +67,9 @@ router.patch('/employee/update/:id',(req, res) => {
         state:req.body.state,
         country:req.body.country,
         portfolioImg:req.body.portfolioImg,
-        department:req.body.department
+        department:req.body.department,
+        jobTitle:req.body.jobTitle,
+        jobType:req.body.jobType
     }
     Employee.findOneAndUpdate({ _id: data.id }, data, {
       returnOriginal: false,

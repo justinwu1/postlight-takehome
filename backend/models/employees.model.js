@@ -43,6 +43,14 @@ const employeeSchema = new Schema(
         department:{
           type:String,
           trim:true
+        },
+        jobTitle:{
+          type:String,
+          trim:true
+        },
+        jobType:{
+          type:String,
+          trim:true
         }
       },
       {
