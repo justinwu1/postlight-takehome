@@ -40,6 +40,10 @@ const employeeSchema = new Schema(
             type: String,
             trim:true
           },
+        department:{
+          type:String,
+          trim:true
+        }
       },
       {
         timestamps: true,
