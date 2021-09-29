@@ -45,3 +45,9 @@ Perform a npm install for both backend and frontend folder once cloned
 - Also need an .env file for the database credential, supply if asked
 > npm install
 
+Frontend
+> npm start
+
+BackEnd
+> nodemon server
+
